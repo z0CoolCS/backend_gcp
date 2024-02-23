@@ -24,6 +24,10 @@ model = load_model()
 def index():
     return {'ok': True}
 
+@app.get('/message')
+def index(message):
+    return {'Your message': message}
+
 @app.get('/predict')
 def predict(age, sex, chest_pain, resting_bp, cholesterol, fasting_bs, resting_ecg, max_hr,exercise_angina,oldpeak,st_slope):
     values = [int(age), sex, chest_pain, int(resting_bp), int(cholesterol), int(fasting_bs,), 
